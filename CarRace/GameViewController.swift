@@ -10,7 +10,13 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+
 class GameViewController: UIViewController {
+    
+    var CarAnimator: UIDynamicAnimator!
+    var dynamicItemBehaviour: UIDynamicItemBehavior!
+    var gravityBehaviour: UIGravityBehavior!
+    var collisionBehaviour: UICollisionBehavior!
     
     @IBOutlet weak var RoadAI: UIImageView!
     
@@ -18,6 +24,10 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CarAnimator = UIDynamicAnimator(referenceView: self.view)
+        dynamicItemBehaviour = UIDynamicItemBehavior(items:[])
+        collisionBehaviour = UICollisionBehavior(items:[])
         
         for index in 0...9 {
             
@@ -38,12 +48,26 @@ class GameViewController: UIViewController {
             case 4: obstacleview.image = UIImage(named: "car4.png")
                 
             default:
-                obstacleview.image = UIImage(named: "car5.png")
-            
+                obstacleview.image = UIImage(named: "car4.png")
             }
+            
+            obstacleview.frame = CGRect(x: Int(arc4random_uniform(UInt32(screensize))), y: 0, width: 40, height: 65)
+            
+            self.view.addSubview(obstacleview)
+            self.view.bringSubview(toFront: obstacleview)
+            
+            self.dynamicItemBehaviour.addItem(obstacleview)
+            self.dynamicItemBehaviour.addLinearVelocity(CGPoint(x: 0, y: 350), for: obstacleview)
+            self.collisionBehaviour.addItem(obstacleview)
         }
     }
 
+        
+        CarAnimator.addBehavior(dynamicItemBehaviour)
+        collisionBehaviour = UICollisionBehavior(items: [])
+        collisionBehaviour.translatesReferenceBoundsIntoBoundary = false
+        CarAnimator.addBehavior(collisionBehaviour)
+        
                 var imageArray: [UIImage]
         
         imageArray = [UIImage(named:"road1.png")!,UIImage(named:"road2.png")!,UIImage(named:
