@@ -86,6 +86,15 @@ class GameViewController: UIViewController, subViewDelegate {
         collisionBehaviour.translatesReferenceBoundsIntoBoundary = false
         CarAnimator.addBehavior(collisionBehaviour)
         
+        let quitGame = DispatchTime.now() + 20
+        DispatchQueue.main.asyncAfter(deadline: quitGame) {
+            
+            let GameFinished = UIImageView(image: UIImage(named: "game_over.jpg"))
+            GameFinished.frame = UIScreen.main.bounds
+            self.view.addSubview(GameFinished)
+            self.view.bringSubview(toFront: GameFinished)
+        }
+        
                 var imageArray: [UIImage]
         
         imageArray = [UIImage(named:"road1.png")!,UIImage(named:"road2.png")!,UIImage(named:
