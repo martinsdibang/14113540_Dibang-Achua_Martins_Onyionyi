@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="car1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hwr-UJ-wdE" customClass="DraggedImageView" customModule="CarRace" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="482" width="240" height="128"/>
+                                <rect key="frame" x="57" y="368" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -32,6 +32,7 @@
                     </view>
                     <connections>
                         <outlet property="RoadAI" destination="F1k-4o-3Eh" id="YbK-Ww-fYp"/>
+                        <outlet property="carlook" destination="Hwr-UJ-wdE" id="cgQ-kh-QFb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>

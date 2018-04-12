@@ -9,21 +9,39 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+protocol subViewDelegate {
+    
+    func changeSomething()
+}
 
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, subViewDelegate {
     
     var CarAnimator: UIDynamicAnimator!
     var dynamicItemBehaviour: UIDynamicItemBehavior!
     var gravityBehaviour: UIGravityBehavior!
     var collisionBehaviour: UICollisionBehavior!
     
-    @IBOutlet weak var RoadAI: UIImageView!
     
     let CarArray = [1,2,3,4,5,6,7,8,9,10]
     
+    
+    @IBOutlet weak var RoadAI: UIImageView!
+    @IBOutlet weak var carlook: DraggedImageView!
+    
+    func changeSomething()
+    {
+        collisionBehaviour.addBoundary(withIdentifier: "racecar" as NSCopying, for: UIBezierPath(rect: carlook.frame))
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        carlook.myDelegate = self
+        
+        self.view.addSubview(carlook)
+        self.view.bringSubview(toFront: carlook)
         
         CarAnimator = UIDynamicAnimator(referenceView: self.view)
         dynamicItemBehaviour = UIDynamicItemBehavior(items:[])
