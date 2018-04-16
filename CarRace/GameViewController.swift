@@ -93,7 +93,7 @@ class GameViewController: UIViewController, subViewDelegate {
             GameFinished.frame = UIScreen.main.bounds
             self.view.addSubview(GameFinished)
             self.view.bringSubview(toFront: GameFinished)
-        }
+        }       
         
                 var imageArray: [UIImage]
         
