@@ -19,13 +19,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F1k-4o-3Eh">
-                                <rect key="frame" x="-7" y="0.0" width="411" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="car1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hwr-UJ-wdE" customClass="DraggedImageView" customModule="CarRace" customModuleProvider="target">
-                                <rect key="frame" x="57" y="368" width="240" height="128"/>
+                                <rect key="frame" x="53" y="394" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dz-Rc-7gp">
+                                <rect key="frame" x="69" y="90" width="79" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWe-3u-0E9">
+                                <rect key="frame" x="252" y="90" width="91" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txS-ZU-ZsE">
+                                <rect key="frame" x="257" y="377" width="86" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="replay.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
@@ -33,6 +51,9 @@
                     <connections>
                         <outlet property="RoadAI" destination="F1k-4o-3Eh" id="YbK-Ww-fYp"/>
                         <outlet property="carlook" destination="Hwr-UJ-wdE" id="cgQ-kh-QFb"/>
+                        <outlet property="replay" destination="txS-ZU-ZsE" id="Njq-vl-RdA"/>
+                        <outlet property="scorekeeper" destination="7Dz-Rc-7gp" id="GGA-Ot-7t4"/>
+                        <outlet property="timekeeper" destination="lWe-3u-0E9" id="EmI-FJ-0Jf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -42,5 +63,6 @@
     </scenes>
     <resources>
         <image name="car1.png" width="411" height="830"/>
+        <image name="replay.png" width="894" height="894"/>
     </resources>
 </document>

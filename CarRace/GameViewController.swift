@@ -16,6 +16,13 @@ protocol subViewDelegate {
 
 
 class GameViewController: UIViewController, subViewDelegate {
+    @IBOutlet weak var scorekeeper: UILabel!
+    @IBOutlet weak var timekeeper: UIButton!
+    @IBOutlet weak var replay: UIButton!
+    
+    var pointNumber = 0
+    var startTime = 20
+    var startTimer = Timer()
     
     var CarAnimator: UIDynamicAnimator!
     var dynamicItemBehaviour: UIDynamicItemBehavior!
@@ -25,7 +32,15 @@ class GameViewController: UIViewController, subViewDelegate {
     
     let CarArray = [1,2,3,4,5,6,7,8,9,10]
     
-    
+    @objc func startGameTimer(){
+        startTime = startTime - 1
+        timekeeper.setTitle(String(startTime), for:.normal)
+        
+        if startTime == 0 {
+            startTimer.invalidate()
+        }
+        
+    }
     @IBOutlet weak var RoadAI: UIImageView!
     @IBOutlet weak var carlook: DraggedImageView!
     
@@ -37,6 +52,12 @@ class GameViewController: UIViewController, subViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector (GameViewController.startGameTimer), userInfo: nil, repeats: true)
+        startTime = 20
+        timekeeper.setTitle(String(startTime), for:.normal)
+        
+        replay.isHidden = true
         
         carlook.myDelegate = self
         
@@ -77,6 +98,8 @@ class GameViewController: UIViewController, subViewDelegate {
             self.dynamicItemBehaviour.addItem(obstacleview)
             self.dynamicItemBehaviour.addLinearVelocity(CGPoint(x: 0, y: 350), for: obstacleview)
             self.collisionBehaviour.addItem(obstacleview)
+            self.scorekeeper.text =  String(self.pointNumber)
+            self.pointNumber = self.pointNumber + 1
         }
     }
 
@@ -93,6 +116,8 @@ class GameViewController: UIViewController, subViewDelegate {
             GameFinished.frame = UIScreen.main.bounds
             self.view.addSubview(GameFinished)
             self.view.bringSubview(toFront: GameFinished)
+            self.view.addSubview(self.replay)
+            self.replay.isHidden = false
         }       
         
                 var imageArray: [UIImage]
