@@ -130,7 +130,7 @@ class GameViewController: UIViewController, subViewDelegate {
             "road15.png")!,UIImage(named: "road16.png")!,UIImage(named: "road17.png")!,UIImage(named:
             "road18.png")!,UIImage(named: "road19.png")!,UIImage(named: "road20.png")!]
                 
-        RoadAI.image = UIImage.animatedImage(with: imageArray, duration: 1)
+        RoadAI.image = UIImage.animatedImage(with: imageArray, duration: 0.1)
     }
         
 
