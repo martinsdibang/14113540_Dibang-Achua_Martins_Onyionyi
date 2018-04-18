@@ -17,7 +17,6 @@ protocol subViewDelegate {
 
 class GameViewController: UIViewController, subViewDelegate {
     @IBOutlet weak var scorekeeper: UILabel!
-    @IBOutlet weak var timekeeper: UIButton!
     @IBOutlet weak var replay: UIButton!
     
     var pointNumber = 0
@@ -34,7 +33,6 @@ class GameViewController: UIViewController, subViewDelegate {
     
     @objc func startGameTimer(){
         startTime = startTime - 1
-        timekeeper.setTitle(String(startTime), for:.normal)
         
         if startTime == 0 {
             startTimer.invalidate()
@@ -55,7 +53,7 @@ class GameViewController: UIViewController, subViewDelegate {
         
         startTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector (GameViewController.startGameTimer), userInfo: nil, repeats: true)
         startTime = 20
-        timekeeper.setTitle(String(startTime), for:.normal)
+        
         
         replay.isHidden = true
         

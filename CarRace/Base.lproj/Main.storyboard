@@ -33,12 +33,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWe-3u-0E9">
-                                <rect key="frame" x="252" y="90" width="91" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txS-ZU-ZsE">
                                 <rect key="frame" x="257" y="377" width="86" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -53,7 +47,6 @@
                         <outlet property="carlook" destination="Hwr-UJ-wdE" id="cgQ-kh-QFb"/>
                         <outlet property="replay" destination="txS-ZU-ZsE" id="Njq-vl-RdA"/>
                         <outlet property="scorekeeper" destination="7Dz-Rc-7gp" id="GGA-Ot-7t4"/>
-                        <outlet property="timekeeper" destination="lWe-3u-0E9" id="EmI-FJ-0Jf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
