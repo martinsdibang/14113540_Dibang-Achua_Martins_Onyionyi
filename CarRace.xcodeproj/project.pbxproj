@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0911896D2088FABD004C64C4 /* end.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0911896C2088FABD004C64C4 /* end.jpg */; };
+		0911896F2088FC3E004C64C4 /* replay12.png in Resources */ = {isa = PBXBuildFile; fileRef = 0911896E2088FC3E004C64C4 /* replay12.png */; };
 		095A669D2056CD4D001ACB14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095A669C2056CD4D001ACB14 /* AppDelegate.swift */; };
 		095A669F2056CD4D001ACB14 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 095A669E2056CD4D001ACB14 /* GameScene.sks */; };
 		095A66A12056CD4D001ACB14 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 095A66A02056CD4D001ACB14 /* Actions.sks */; };
@@ -36,7 +38,6 @@
 		095A66DA2056D1DE001ACB14 /* road2.png in Resources */ = {isa = PBXBuildFile; fileRef = 095A66C62056D1DE001ACB14 /* road2.png */; };
 		095A66DB2056D1DE001ACB14 /* road10.png in Resources */ = {isa = PBXBuildFile; fileRef = 095A66C72056D1DE001ACB14 /* road10.png */; };
 		0994670520867D340066DE8A /* replay.png in Resources */ = {isa = PBXBuildFile; fileRef = 0994670420867D340066DE8A /* replay.png */; };
-		09991192207FD176005AAD80 /* game_over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09991191207FD176005AAD80 /* game_over.jpg */; };
 		099927F5207B95EB0010210B /* DraggedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099927F4207B95EB0010210B /* DraggedImageView.swift */; };
 		099927FC207BA24D0010210B /* car2.png in Resources */ = {isa = PBXBuildFile; fileRef = 099927F6207BA24C0010210B /* car2.png */; };
 		099927FD207BA24D0010210B /* car4.png in Resources */ = {isa = PBXBuildFile; fileRef = 099927F7207BA24C0010210B /* car4.png */; };
@@ -44,9 +45,12 @@
 		099927FF207BA24D0010210B /* car1.png in Resources */ = {isa = PBXBuildFile; fileRef = 099927F9207BA24C0010210B /* car1.png */; };
 		09992800207BA24D0010210B /* car6.png in Resources */ = {isa = PBXBuildFile; fileRef = 099927FA207BA24D0010210B /* car6.png */; };
 		09992801207BA24D0010210B /* car5.png in Resources */ = {isa = PBXBuildFile; fileRef = 099927FB207BA24D0010210B /* car5.png */; };
+		09EE89732088F724003B704C /* soco.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 09EE89722088F724003B704C /* soco.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0911896C2088FABD004C64C4 /* end.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = end.jpg; sourceTree = "<group>"; };
+		0911896E2088FC3E004C64C4 /* replay12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = replay12.png; sourceTree = "<group>"; };
 		095A66992056CD4D001ACB14 /* CarRace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarRace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		095A669C2056CD4D001ACB14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		095A669E2056CD4D001ACB14 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -78,7 +82,6 @@
 		095A66C62056D1DE001ACB14 /* road2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = road2.png; path = ../../images/road2.png; sourceTree = "<group>"; };
 		095A66C72056D1DE001ACB14 /* road10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = road10.png; path = ../../images/road10.png; sourceTree = "<group>"; };
 		0994670420867D340066DE8A /* replay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = replay.png; path = ../../images/replay.png; sourceTree = "<group>"; };
-		09991191207FD176005AAD80 /* game_over.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = game_over.jpg; path = ../../images/game_over.jpg; sourceTree = "<group>"; };
 		099927F4207B95EB0010210B /* DraggedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggedImageView.swift; sourceTree = "<group>"; };
 		099927F6207BA24C0010210B /* car2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car2.png; path = ../../images/car2.png; sourceTree = "<group>"; };
 		099927F7207BA24C0010210B /* car4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car4.png; path = ../../images/car4.png; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 		099927F9207BA24C0010210B /* car1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car1.png; path = ../../images/car1.png; sourceTree = "<group>"; };
 		099927FA207BA24D0010210B /* car6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car6.png; path = ../../images/car6.png; sourceTree = "<group>"; };
 		099927FB207BA24D0010210B /* car5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car5.png; path = ../../images/car5.png; sourceTree = "<group>"; };
+		09EE89722088F724003B704C /* soco.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soco.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +128,10 @@
 				095A66A02056CD4D001ACB14 /* Actions.sks */,
 				095A66A22056CD4D001ACB14 /* GameScene.swift */,
 				095A66A42056CD4D001ACB14 /* GameViewController.swift */,
-				09991191207FD176005AAD80 /* game_over.jpg */,
 				099927F4207B95EB0010210B /* DraggedImageView.swift */,
+				09EE89722088F724003B704C /* soco.mp3 */,
 				0994670420867D340066DE8A /* replay.png */,
+				0911896E2088FC3E004C64C4 /* replay12.png */,
 				099927F9207BA24C0010210B /* car1.png */,
 				099927F6207BA24C0010210B /* car2.png */,
 				099927F8207BA24C0010210B /* car3.png */,
@@ -153,6 +158,7 @@
 				095A66BA2056D1DC001ACB14 /* road18.png */,
 				095A66BB2056D1DC001ACB14 /* road19.png */,
 				095A66BC2056D1DD001ACB14 /* road20.png */,
+				0911896C2088FABD004C64C4 /* end.jpg */,
 				095A66A92056CD4D001ACB14 /* Assets.xcassets */,
 				095A66AB2056CD4D001ACB14 /* LaunchScreen.storyboard */,
 				095A66AE2056CD4D001ACB14 /* Info.plist */,
@@ -219,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0911896F2088FC3E004C64C4 /* replay12.png in Resources */,
 				095A66CC2056D1DE001ACB14 /* road8.png in Resources */,
 				095A66A82056CD4D001ACB14 /* Main.storyboard in Resources */,
 				099927FD207BA24D0010210B /* car4.png in Resources */,
@@ -233,10 +240,11 @@
 				09992800207BA24D0010210B /* car6.png in Resources */,
 				095A66CD2056D1DE001ACB14 /* road14.png in Resources */,
 				095A66CA2056D1DE001ACB14 /* road9.png in Resources */,
+				09EE89732088F724003B704C /* soco.mp3 in Resources */,
 				09992801207BA24D0010210B /* car5.png in Resources */,
 				099927FC207BA24D0010210B /* car2.png in Resources */,
 				095A66DB2056D1DE001ACB14 /* road10.png in Resources */,
-				09991192207FD176005AAD80 /* game_over.jpg in Resources */,
+				0911896D2088FABD004C64C4 /* end.jpg in Resources */,
 				095A66C82056D1DE001ACB14 /* road3.png in Resources */,
 				095A66DA2056D1DE001ACB14 /* road2.png in Resources */,
 				095A66D62056D1DE001ACB14 /* road17.png in Resources */,

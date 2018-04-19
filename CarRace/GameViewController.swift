@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import AVFoundation
 protocol subviewDelegate {
     
     func changeSomething()
@@ -24,6 +25,7 @@ class GameViewController: UIViewController, subviewDelegate {
     var dynamicItemBehaviour: UIDynamicItemBehavior!
     var gravityBehaviour: UIGravityBehavior!
     var collisionBehaviour: UICollisionBehavior!
+    var bombSoundEffect: AVAudioPlayer?
     
     var Score = 0;
     var scoreArray: [UIImageView] = []
@@ -35,6 +37,7 @@ class GameViewController: UIViewController, subviewDelegate {
     
     @IBOutlet weak var RoadAI: UIImageView!
     @IBOutlet weak var carlook: DraggedImageView!
+    
     
     @IBAction func restart(_ sender: Any) {
         viewDidLoad()
@@ -126,6 +129,15 @@ class GameViewController: UIViewController, subviewDelegate {
         }
     }
 
+        
+        let path = Bundle.main.path(forResource: "soco.mp3", ofType:nil)!; let url = URL.init(fileURLWithPath: path)
+        do {
+            bombSoundEffect = try AVAudioPlayer(contentsOf: url); bombSoundEffect?.play()
+        }catch {
+            // couldn't load file :(
+        }
+        
+        
         CarAnimator.addBehavior(dynamicItemBehaviour)
         collisionBehaviour = UICollisionBehavior(items: [])
         collisionBehaviour.translatesReferenceBoundsIntoBoundary = false
@@ -136,7 +148,7 @@ class GameViewController: UIViewController, subviewDelegate {
             
             self.GameOver.isHidden = false
             self.replay.isHidden = false
-            self.GameOver.image = UIImage(named: "game_over.jpg")
+            self.GameOver.image = UIImage(named: "end.jpg")
             self.GameOver.frame = UIScreen.main.bounds
             self.view.addSubview(self.GameOver)
             self.view.bringSubview(toFront: self.GameOver)
