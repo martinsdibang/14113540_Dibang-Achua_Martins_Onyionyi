@@ -9,53 +9,76 @@
 import UIKit
 import SpriteKit
 import GameplayKit
-protocol subViewDelegate {
+protocol subviewDelegate {
     
     func changeSomething()
 }
 
 
-class GameViewController: UIViewController, subViewDelegate {
-    @IBOutlet weak var scorekeeper: UILabel!
+class GameViewController: UIViewController, subviewDelegate {
+
     @IBOutlet weak var replay: UIButton!
-    
-    var pointNumber = 0
-    var startTime = 20
-    var startTimer = Timer()
+    @IBOutlet weak var ScoreKeeper: UILabel!
     
     var CarAnimator: UIDynamicAnimator!
     var dynamicItemBehaviour: UIDynamicItemBehavior!
     var gravityBehaviour: UIGravityBehavior!
     var collisionBehaviour: UICollisionBehavior!
     
+    var Score = 0;
+    var scoreArray: [UIImageView] = []
+    var carGame: [UIImageView] = []
+    let GameOver = UIImageView(image: nil)
     
-    let CarArray = [1,2,3,4,5,6,7,8,9,10]
     
-    @objc func startGameTimer(){
-        startTime = startTime - 1
-        
-        if startTime == 0 {
-            startTimer.invalidate()
-        }
-        
-    }
+    let CarArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    
     @IBOutlet weak var RoadAI: UIImageView!
     @IBOutlet weak var carlook: DraggedImageView!
     
+    @IBAction func restart(_ sender: Any) {
+        viewDidLoad()
+        
+        ScoreKeeper.text = ""
+        Score = 0;
+        GameOver.isHidden = true
+        replay.isHidden = true
+        
+        for i in carGame {
+            i.removeFromSuperview()
+        }
+        viewDidLoad()
+    }
+    
     func changeSomething()
     {
+        collisionBehaviour.removeAllBoundaries()
         collisionBehaviour.addBoundary(withIdentifier: "racecar" as NSCopying, for: UIBezierPath(rect: carlook.frame))
+        
+        for usercar in scoreArray {
+            if(carlook.frame.intersects(usercar.frame)) {
+            Score = Score - 2
+            self.ScoreKeeper.text = String(self.Score)
+            
+            }
+        }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector (GameViewController.startGameTimer), userInfo: nil, repeats: true)
-        startTime = 20
+        var imageArray: [UIImage]
         
+        imageArray = [UIImage(named:"road1.png")!,UIImage(named:"road2.png")!,UIImage(named:
+            "road3.png")!,UIImage(named: "road4.png")!,UIImage(named: "road5.png")!,UIImage(named:
+                "road6.png")!,UIImage(named: "road7.png")!,UIImage(named: "road8.png")!,UIImage(named:
+                    "road9.png")!,UIImage(named: "road10.png")!,UIImage(named: "road11.png")!,UIImage(named:
+                        "road12.png")!,UIImage(named: "road13.png")!,UIImage(named: "road14.png")!,UIImage(named:
+                            "road15.png")!,UIImage(named: "road16.png")!,UIImage(named: "road17.png")!,UIImage(named:
+                                "road18.png")!,UIImage(named: "road19.png")!,UIImage(named: "road20.png")!]
         
-        replay.isHidden = true
+         RoadAI.image = UIImage.animatedImage(with: imageArray, duration: 0.1)
         
         carlook.myDelegate = self
         
@@ -66,7 +89,7 @@ class GameViewController: UIViewController, subViewDelegate {
         dynamicItemBehaviour = UIDynamicItemBehavior(items:[])
         collisionBehaviour = UICollisionBehavior(items:[])
         
-        for index in 0...9 {
+        for index in 0...14 {
             
             let delaytime = Double(self.CarArray[index])
             
@@ -96,12 +119,13 @@ class GameViewController: UIViewController, subViewDelegate {
             self.dynamicItemBehaviour.addItem(obstacleview)
             self.dynamicItemBehaviour.addLinearVelocity(CGPoint(x: 0, y: 350), for: obstacleview)
             self.collisionBehaviour.addItem(obstacleview)
-            self.scorekeeper.text =  String(self.pointNumber)
-            self.pointNumber = self.pointNumber + 1
+            
+            self.scoreArray.append(obstacleview)
+            self.Score += 2
+            self.ScoreKeeper.text = String(self.Score)
         }
     }
 
-        
         CarAnimator.addBehavior(dynamicItemBehaviour)
         collisionBehaviour = UICollisionBehavior(items: [])
         collisionBehaviour.translatesReferenceBoundsIntoBoundary = false
@@ -110,25 +134,15 @@ class GameViewController: UIViewController, subViewDelegate {
         let quitGame = DispatchTime.now() + 20
         DispatchQueue.main.asyncAfter(deadline: quitGame) {
             
-            let GameFinished = UIImageView(image: UIImage(named: "game_over.jpg"))
-            GameFinished.frame = UIScreen.main.bounds
-            self.view.addSubview(GameFinished)
-            self.view.bringSubview(toFront: GameFinished)
-            self.view.addSubview(self.replay)
+            self.GameOver.isHidden = false
             self.replay.isHidden = false
-        }       
-        
-                var imageArray: [UIImage]
-        
-        imageArray = [UIImage(named:"road1.png")!,UIImage(named:"road2.png")!,UIImage(named:
-            "road3.png")!,UIImage(named: "road4.png")!,UIImage(named: "road5.png")!,UIImage(named:
-            "road6.png")!,UIImage(named: "road7.png")!,UIImage(named: "road8.png")!,UIImage(named:
-            "road9.png")!,UIImage(named: "road10.png")!,UIImage(named: "road11.png")!,UIImage(named:
-            "road12.png")!,UIImage(named: "road13.png")!,UIImage(named: "road14.png")!,UIImage(named:
-            "road15.png")!,UIImage(named: "road16.png")!,UIImage(named: "road17.png")!,UIImage(named:
-            "road18.png")!,UIImage(named: "road19.png")!,UIImage(named: "road20.png")!]
-                
-        RoadAI.image = UIImage.animatedImage(with: imageArray, duration: 0.1)
+            self.GameOver.image = UIImage(named: "game_over.jpg")
+            self.GameOver.frame = UIScreen.main.bounds
+            self.view.addSubview(self.GameOver)
+            self.view.bringSubview(toFront: self.GameOver)
+            self.view.bringSubview(toFront: self.replay)
+        }
+       
     }
         
 
