@@ -25,7 +25,7 @@ class GameViewController: UIViewController, subviewDelegate {
     var dynamicItemBehaviour: UIDynamicItemBehavior!
     var gravityBehaviour: UIGravityBehavior!
     var collisionBehaviour: UICollisionBehavior!
-    var bombSoundEffect: AVAudioPlayer?
+    var musicSound: AVAudioPlayer?
     
     var Score = 0;
     var scoreArray: [UIImageView] = []
@@ -132,7 +132,7 @@ class GameViewController: UIViewController, subviewDelegate {
         
         let path = Bundle.main.path(forResource: "soco.mp3", ofType:nil)!; let url = URL.init(fileURLWithPath: path)
         do {
-            bombSoundEffect = try AVAudioPlayer(contentsOf: url); bombSoundEffect?.play()
+            musicSound = try AVAudioPlayer(contentsOf: url); musicSound?.play()
         }catch {
             // couldn't load file :(
         }
