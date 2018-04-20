@@ -66,7 +66,7 @@
                                     <action selector="restart:" destination="BV1-FR-VrT" eventType="touchUpInside" id="9qg-e1-65z"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="car1.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hwr-UJ-wdE" customClass="DraggedImageView" customModule="CarRace" customModuleProvider="target">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="car0.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hwr-UJ-wdE" customClass="DraggedImageView" customModule="CarRace" customModuleProvider="target">
                                 <rect key="frame" x="80" y="386" width="215" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -87,7 +87,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="car1.png" width="411" height="830"/>
+        <image name="car0.png" width="382" height="757"/>
         <image name="cars.jpg" width="1280" height="720"/>
         <image name="maxresdefault-2.jpg" width="1280" height="720"/>
         <image name="replay.png" width="894" height="894"/>
